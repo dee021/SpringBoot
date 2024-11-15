@@ -5,12 +5,16 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 // 엔티티 선언
 @Entity
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString
+@Getter
 public class Article {
     @Id
     // PK 지정
@@ -24,6 +28,14 @@ public class Article {
 
     @Column
     private String content;
+
+    /*public Long getId() {
+        return id;
+    }
+    => @Getter 대체
+    */
+
+
 /*
     public Article(Long id, String title, String content) {
         this.content = content;
