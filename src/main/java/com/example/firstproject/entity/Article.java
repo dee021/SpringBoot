@@ -1,9 +1,6 @@
 package com.example.firstproject.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,7 +15,12 @@ import lombok.ToString;
 public class Article {
     @Id
     // PK 지정
-    @GeneratedValue
+    /*
+    @GeneratedValue : .sql 로 넣은 데이터와 id 중복 문제 
+    -> 
+    @GeneratedValue(strategy = GenerationType.IDENTITY) & .sql 파일로 생성하는 데이터에 id 생략
+    */
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     // 자동 생성 기능 추가
     private Long id;
 
@@ -28,6 +30,13 @@ public class Article {
 
     @Column
     private String content;
+
+    public void patch(Article article) {
+        if (article.title != null)
+            this.title = article.title;
+        if (article.content != null)
+            this.content = article.content;
+    }
 
     /*public Long getId() {
         return id;
