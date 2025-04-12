@@ -25,3 +25,8 @@ INSERT INTO coffee(name, price) VALUES('아메리카노', '4500');
 INSERT INTO coffee(name, price) VALUES('라떼', '5000');
 INSERT INTO coffee(name, price) VALUES('카페 모카', '5500');
 
+INSERT INTO pizza(name, price) VALUES('페퍼로니 피자', '25900');
+INSERT INTO pizza(name, price) VALUES('불고기 피자', '29900');
+INSERT INTO pizza(name, price) VALUES('고구마 피자', '30900');
+INSERT INTO pizza(name, price) VALUES('포테이토 피자', '27900');
+INSERT INTO pizza(name, price) VALUES('치즈 피자', '23900');
